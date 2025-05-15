@@ -1,7 +1,7 @@
 # 📖 Mufin: 한입에 쏙 배우는 모의투자 어플
 
 ## 📱 배포 
-[Mufin 이용하기](http://mufin.newlecture.com)
+[Mufin 이용하기](https://mufin.newlecture.com)
 
 ## 📌 프로젝트 개요
 "10대와 주식입문자를 위한 투자 학습 어플리케이션"  
@@ -34,7 +34,28 @@
 - **거래 내역 관리:**  
   사용자가 매수/매도한 거래 이력을 통해 보유 주식 정보와 손익을 확인할 수 있습니다.
 
+## ❗맡은 기능
+
+- **실시간 데이터 처리 작업:**
+  주식 **실시간데이터**를 WebSocket을 통해 가져와서 제공합니다.
+- **주식 관련 퀴즈 제공:**
+  **Next.js AppRouter**를 활용해서 **SSR**(Server-Side-Rendering)으로 구현합니다.
+- **프로젝트 배포 및 CI / CD:**
+  **GitHub Actions**를 활용해 CI / CD 파이프라인을 구축하며, **Nginx**를 통해 리버스 프록시 및 SSL 인증 처리를 구축하였습니다.
+- **미들웨어 구축:**
+  **Next.js**의 **Middleware**를 활용해 회원간 쿠키를 관리하여 로그인 상태 관리를 하였습니다.
+
+## 🗨️깨달은점
+- **LightHouse 최적화 경험**
+ 개발은 완료되었지만, **LightHouse 점수 개선**을 통해 불필요한 리소스를 줄이고 **로딩 속도**를 개선하며 더 나은 사용자 경험을 만들 수 있음을 깨달았습니다.
+꾸준한 최적화가 서비스 품질 향상에 필수라는 점을 직접 체감했습니다.
+- **런타임 환경의 차이점**
+**Next.js** **Middleware**를 사용하여 로그인 상태관리를 하던 중에 Edge와 Node **런타임의 차이**를 경험하며, 기능 제한에 맞춰 적절한 런타임 선택이 중요함을 배웠습니다.
+- **WebSocket + 보안 프로토콜의 환경에서 통신 경험**
+  WebSocket 사용 시** Mixed Content** 이슈를 겪고, Nginx **리버스 프록시**로 wss:// 연결을 구성하면서 운영 환경에 맞는 설계의 중요성을 배웠습니다.
+  
 ## 🏛️ System Architecture
+
 <p>
 <img src="https://github.com/user-attachments/assets/7cb2a5b9-2f67-4782-af1a-40093f5ec77b" width="600px">
 </p>
@@ -45,6 +66,7 @@
 </p>
 
 ## 🛠️ 기술 스택
+
 ### ⚡ Frameworks & Libraries
 | Next.js | TypeScript | React | Styled- <br> Components |
 | :---: | :---: | :---: | :---: |
@@ -97,16 +119,13 @@
 | <img src="https://github.com/kwonup.png" width="80"> | <img src="https://github.com/Taemin1.png" width="80"> | <img src="https://github.com/BoyunLee.png" width="80"> | <img src="https://github.com/JunSeGue.png" width="80"> |
 | :----------------------------------------------------: | :------------------------------------------------------: | :--------------------------------------------------------: | :------------------------------------------------------: |
 |         [권영우](https://github.com/kwonup)          |         [김태민](https://github.com/Taemin1)          |         [이보윤](https://github.com/BoyunLee)          |         [전세계](https://github.com/JunSeGue)          |
-|                          팀장                          |                           팀원                           |                            팀원                            |                           팀원                           |
+|                          팀장 및 풀스택 개발자                          |                           팀원 및 풀스택 개발자                        |                            팀원 및 풀스택 개발자                          |                           팀원 및 풀스택 개발자                         |
 
 
 ## 설치 가이드
 1. 저장소 클론: `git clone https://github.com/FRONT-END-BOOTCAMP-PLUS-3/mufin.git`
 2. 의존성 설치: `npm install`
 3. 실행: `npm run dev`
-
-## 변경 이력
-- **2025-03-14:** 최초 버전 릴리즈
 
 - ## 문의하기
 질문이나 피드백은 [이메일](seogu080@naver.com)로 연락해 주세요.
